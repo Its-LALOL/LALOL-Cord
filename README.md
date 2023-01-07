@@ -1,1 +1,3 @@
 # LALOL-Cord
+
+coming soon
