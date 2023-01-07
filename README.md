@@ -4,6 +4,8 @@
 1. Download TamperMonkey | [Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) | [Firefox](https://addons.mozilla.org/ru/firefox/addon/tampermonkey)
 2. Press [download](https://github.com/Its-LALOL/LALOL-Cord/raw/main/a.user.js) button
 3. Press install
+4. Go to [discord.com/app](https://discord.com/app)
+5. Press Zero on Numpad to open Menu!
 
 [<img src='http://www.pngall.com/wp-content/uploads/2/Download-Button-PNG-Image.png' height='120' width
 ='300'>](https://github.com/Its-LALOL/LALOL-Cord/raw/main/a.user.js "Download.")
