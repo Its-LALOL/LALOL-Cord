@@ -7,3 +7,8 @@
 
 [<img src='http://www.pngall.com/wp-content/uploads/2/Download-Button-PNG-Image.png' height='120' width
 ='300'>](https://github.com/Its-LALOL/LALOL-Cord/raw/main/a.user.js "Download.")
+
+
+
+# ⚠️ Disclaimer ⚠️
+I am not responsible for what you do. The program is for educational purposes only!
