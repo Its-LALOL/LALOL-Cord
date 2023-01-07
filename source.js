@@ -70,4 +70,4 @@ async function watermark(){
     }
 }
 
-await watermark()
+watermark()
