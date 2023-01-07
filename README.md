@@ -10,5 +10,4 @@
 
 
 
-# ⚠️ Disclaimer ⚠️
 I am not responsible for what you do. The program is for educational purposes only!
