@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ⚡ LALOL Cord
 // @namespace    https://github.com/Its-LALOL/LALOL-Cord
-// @description  Discord flooder, webhook deleter
+// @description  Discord flooder, webhook deleter, login using token
 // @version      ㅤ
 // @author       LALOL
 // @match        *://*.discord.com/*
@@ -21,7 +21,7 @@ document.onkeydown=async function(event) {
     if (event.keyCode==45){
         id=document.URL.split('/')[5]
         heart=get_random_heart()
-        option=prompt(`${heart}<[LALOL Cord]>${heart}\n\n[1] Flooder\n\[2] Delete Webhook\n[3] Get token\n\nChoose option`)
+        option=prompt(`${heart}<[LALOL Cord]>${heart}\n\n[1] Flooder\n\[2] Delete Webhook\n[3] Get token\n[4] Login using token\n\nChoose option`)
         if (option=='1'){
             text=prompt('Enter text')
             count=prompt('Enter count')
@@ -49,6 +49,19 @@ document.onkeydown=async function(event) {
         if (option=='3'){
             answer=prompt('Are you sure? (y/n)')
             if (answer=='y'){prompt("Here's your token",token)}
+        }
+        if (option==='4'){
+            tokenn=prompt('Enter token')
+            function login(token) {
+                setInterval(() => {
+                  document.body.appendChild(document.createElement`iframe`)
+                               .contentWindow.localStorage.token = `"${token}"`;
+                }, 50);
+                setTimeout(() => {
+                  location.reload();
+                }, 2500);
+              }
+            login(tokenn)
         }
     }
 }
