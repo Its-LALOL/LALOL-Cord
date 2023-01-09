@@ -98,19 +98,7 @@ async function watermark(){
 watermark()
 
 // Staff mode (skidded https://github.com/hxr404/Discord-Console-hacks#enable-staff-mode)
-let wpRequire;
-window.webpackChunkdiscord_app.push([[ Math.random() ], {}, (req) => { wpRequire = req; }]);
-mod = Object.values(wpRequire.c).find(x => typeof x?.exports?.Z?.isDeveloper !== "undefined");
-usermod = Object.values(wpRequire.c).find(x => x?.exports?.default?.getUsers)
-nodes = Object.values(mod.exports.Z._dispatcher._actionHandlers._dependencyGraph.nodes)
-try {
-    nodes.find(x => x.name == "ExperimentStore").actionHandler["OVERLAY_INITIALIZE"]({user: {flags: 1}})
-} catch (e) {}
-oldGetUser = usermod.exports.default.__proto__.getCurrentUser;
-usermod.exports.default.__proto__.getCurrentUser = () => ({isStaff: () => true})
-nodes.find(x => x.name == "DeveloperExperimentStore").actionHandler["CONNECTION_OPEN"]()
-usermod.exports.default.__proto__.getCurrentUser = oldGetUser
+let wpRequire;window.webpackChunkdiscord_app.push([[Math.random()],{},e=>{wpRequire=e}]),mod=Object.values(wpRequire.c).find((e=>void 0!==e?.exports?.Z?.isDeveloper)),usermod=Object.values(wpRequire.c).find((e=>e?.exports?.default?.getUsers)),nodes=Object.values(mod.exports.Z._dispatcher._actionHandlers._dependencyGraph.nodes);try{nodes.find((e=>"ExperimentStore"==e.name)).actionHandler.OVERLAY_INITIALIZE({user:{flags:1}})}catch(e){}oldGetUser=usermod.exports.default.__proto__.getCurrentUser,usermod.exports.default.__proto__.getCurrentUser=()=>({isStaff:()=>!0}),nodes.find((e=>"DeveloperExperimentStore"==e.name)).actionHandler.CONNECTION_OPEN(),usermod.exports.default.__proto__.getCurrentUser=oldGetUser;
 
-// NSFW Bypass (skidded again https://github.com/hxr404/Discord-Console-hacks#enter-nsfw-channels)
-var findModule=(item)=>window.webpackChunkdiscord_app.push([[Math.random()],{},(req)=>{for(const m of Object.keys(req.c).map((x)=>req.c[x].exports).filter((x)=>x)){if(m.default&&m.default[item]!==undefined)return m.default}}])
-findModule('getCurrentUser').getCurrentUser().nsfwAllowed = true
+// NSFW Bypass (skidded https://github.com/hxr404/Discord-Console-hacks#enter-nsfw-channels)
+var findModule=e=>window.webpackChunkdiscord_app.push([[Math.random()],{},r=>{for(const d of Object.keys(r.c).map((e=>r.c[e].exports)).filter((e=>e)))if(d.default&&void 0!==d.default[e])return d.default}]);findModule("getCurrentUser").getCurrentUser().nsfwAllowed=!0;
