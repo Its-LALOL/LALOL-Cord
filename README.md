@@ -1,4 +1,5 @@
 # LALOL-Cord [BETA] [<img src='https://github.com/Its-LALOL/LALOL-Cord/raw/main/icon.png' height=50>](https://github.com/Its-LALOL/LALOL-Cord)
+[Web discord only] Modification for discord
 
 # Functions
 1. Flooder (with anti-spam bypass)
