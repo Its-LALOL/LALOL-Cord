@@ -1,5 +1,14 @@
 # LALOL-Cord [BETA] [<img src='https://github.com/Its-LALOL/LALOL-Cord/raw/main/icon.png' height=50>](https://github.com/Its-LALOL/LALOL-Cord)
 
+# Functions
+1. Flooder (with anti-spam bypass)
+2. Get token
+3. Login using token
+4. Delete webhook
+5. Staff mode
+6. NSFW Bypass
+
+
 # How to download
 1. Download TamperMonkey | [Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) | [Firefox](https://addons.mozilla.org/ru/firefox/addon/tampermonkey)
 2. Press [download](https://github.com/Its-LALOL/LALOL-Cord/raw/main/a.user.js) button
