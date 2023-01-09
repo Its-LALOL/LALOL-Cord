@@ -5,7 +5,7 @@
 // @version      ㅤ
 // @author       LALOL
 // @match        *://*.discord.com/*
-// @icon         https://canary.discord.com/assets/ec2c34cadd4b5f4594415127380a85e6.ico
+// @icon         https://github.com/Its-LALOL/LALOL-Cord/raw/main/icon.png
 // @grant        none
 // ==/UserScript==
 
