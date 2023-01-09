@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ⚡ LALOL Cord
 // @namespace    https://github.com/Its-LALOL/LALOL-Cord
-// @description  Discord flooder, webhook deleter, login using token
+// @description  Modification for discord
 // @version      ㅤ
 // @author       LALOL
 // @match        *://*.discord.com/*
