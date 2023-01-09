@@ -1,4 +1,4 @@
-# LALOL-Cord [BETA]
+# LALOL-Cord [BETA] <img src='https://github.com/Its-LALOL/LALOL-Cord/raw/main/icon.png' height=50>
 
 # How to download
 1. Download TamperMonkey | [Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) | [Firefox](https://addons.mozilla.org/ru/firefox/addon/tampermonkey)
