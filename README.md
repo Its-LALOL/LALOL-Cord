@@ -5,8 +5,8 @@
 2. Get token
 3. Login using token
 4. Delete webhook
-5. Staff mode
-6. NSFW Bypass
+5. [Staff mode](https://github.com/hxr404/Discord-Console-hacks#enable-staff-mode)
+6. [NSFW Bypass](https://github.com/hxr404/Discord-Console-hacks#enter-nsfw-channels)
 
 
 # How to download
