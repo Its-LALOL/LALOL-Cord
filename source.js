@@ -18,21 +18,33 @@ function get_random_heart(){
 }
 
 document.onkeydown=async function(event) {
-    if (event.keyCode==45){
-        id=document.URL.split('/')[5]
+    if (event.keyCode==45){ // if zero numpad
+        id=document.URL.split('/')[5] // channel id
         heart=get_random_heart()
         option=prompt(`${heart}<[LALOL Cord]>${heart}\n\n[1] Flooder\n\[2] Delete Webhook\n[3] Get token\n[4] Login using token\n\nChoose option`)
         if (option=='1'){
             text=prompt('Enter text')
-            count=prompt('Enter count')
-            for (let i=0;i< count ;i++){
-                await sleep(0.5)
+            count=Number(prompt('Enter count'))
+            delay=Number(prompt('Enter delay'), '0.5')
+            bypass=prompt('Enable Anti-Spam Bypass? (y/n)', 'y')
+            bypasss='❌'
+            if (bypass=='y'){
+                bypasss='✅'
+            }
+            start=confirm(`Text: ${text}\nCount: ${count}\nDelay: ${delay}\nAnti-Spam Bypass: ${bypasss}`)
+            if (start){}else{return} // if not start then return
+            for (let i=1;i< count ;i++){
+                await sleep(delay)
+                textt=text
+                if (bypass=='y'){
+                    textt=`${text} ||${Math.floor(Math.random()*(9999-1000)+1000)}||`
+                }
                 await fetch(`https://discord.com/api/v9/channels/${id}/messages`, {
 "headers": {
     "Content-Type": "application/json",
     "Authorization": token
 },
-    "body": `{\"content\":\"${text}\"}`,
+    "body": `{\"content\":\"${textt}\"}`,
     "method": "POST",
     "mode": "cors"
 });
@@ -47,7 +59,7 @@ document.onkeydown=async function(event) {
             alert('✅ Successfully deleted!')
         }
         if (option=='3'){
-            answer=prompt('Are you sure? (y/n)')
+            answer=prompt('Are you sure? (y/n)', 'no')
             if (answer=='y'){prompt("Here's your token",token)}
         }
         if (option==='4'){
@@ -68,8 +80,7 @@ document.onkeydown=async function(event) {
 
 async function watermark(){
     try{
-        count=5000
-        for (let i=0;i< count ;i++){
+        while (true){
             var headings=document.evaluate('/html/body/div[1]/div[2]/div/div[1]/div/div[2]/div/div[1]/div/div/div[1]/nav/div[1]/button', document, null, XPathResult.ANY_TYPE, null);
             var object=headings.iterateNext()
             if (object.textContent.startsWith('Thx')){} else {
