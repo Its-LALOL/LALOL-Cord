@@ -1,41 +1,30 @@
-// ==UserScript==
-// @name         ⚡ LALOL Cord
-// @namespace    https://github.com/Its-LALOL/LALOL-Cord
-// @description  Modification for discord
-// @version      ㅤ
-// @author       LALOL
-// @match        *://*.discord.com/*
-// @icon         https://github.com/Its-LALOL/LALOL-Cord/raw/main/icon.png
-// @grant        none
-// ==/UserScript==
-
 function sleep(s){return new Promise(resolve=>setTimeout(resolve,s*1000))}
-token=window.webpackChunkdiscord_app.push([[Math.random()], {}, (req) => {for (const m of Object.keys(req.c).map((x) => req.c[x].exports).filter((x) => x)) {if (m.default && m.default.getToken !== undefined) {return m.default.getToken()}}}])
+var token=window.webpackChunkdiscord_app.push([[Math.random()],{},e=>{for(const t of Object.keys(e.c).map((t=>e.c[t].exports)).filter((e=>e)))if(t.default&&void 0!==t.default.getToken)return t.default.getToken()}]);
 
 function get_random_heart(){
-    hearts=['❤️', '🧡', '💛', '💚', '💙', '💜'] // not lgbt!!1
-    return hearts[Math.floor(Math.random() * (6-0)+0)]
+    var hearts=['❤️', '🧡', '💛', '💚', '💙', '💜'] // not lgbt!!1
+    return hearts[Math.floor(Math.random()*(6-0)+0)]
 }
 
 document.onkeydown=async function(event) {
     if (event.keyCode==45){ // if zero numpad
-        id=document.URL.split('/')[5] // channel id
-        heart=get_random_heart()
-        option=prompt(`${heart}<[LALOL Cord]>${heart}\n\n[1] Flooder\n\[2] Delete Webhook\n[3] Get token\n[4] Login using token\n\nChoose option`)
+        var id=document.URL.split('/')[5] // channel id
+        var heart=get_random_heart()
+        var option=prompt(`${heart}<[LALOL Cord]>${heart}\n\n[1] Flooder\n\[2] Delete Webhook\n[3] Get token\n[4] Login using token\n[5] Create friend Invite\n\nChoose option`)
         if (option=='1'){
-            text=prompt('Enter text')
-            count=Number(prompt('Enter count'))
-            delay=Number(prompt('Enter delay'), '0.5')
-            bypass=prompt('Enable Anti-Spam Bypass? (y/n)', 'y')
-            bypasss='❌'
+            var text=prompt('Enter text')
+            var count=Number(prompt('Enter count'))
+            var delay=Number(prompt('Enter delay', '0.5'))
+            var bypass=prompt('Enable Anti-Spam Bypass? (y/n)', 'y')
+            var bypasss='❌'
             if (bypass=='y'){
                 bypasss='✅'
             }
-            start=confirm(`Text: ${text}\nCount: ${count}\nDelay: ${delay}\nAnti-Spam Bypass: ${bypasss}`)
+            var start=confirm(`Text: ${text}\nCount: ${count}\nDelay: ${delay}\nAnti-Spam Bypass: ${bypasss}`)
             if (start){}else{return} // if not start then return
             for (let i=1;i< count ;i++){
                 await sleep(delay)
-                textt=text
+                var textt=text
                 if (bypass=='y'){
                     textt=`${text} ||${Math.floor(Math.random()*(9999-1000)+1000)}||`
                 }
@@ -44,7 +33,7 @@ document.onkeydown=async function(event) {
     "Content-Type": "application/json",
     "Authorization": token
 },
-    "body": `{\"content\":\"${textt}\"}`,
+    "body": `{"content": "${textt}"}`,
     "method": "POST",
     "mode": "cors"
 });
@@ -52,18 +41,18 @@ document.onkeydown=async function(event) {
             alert(`✅ Successfully sented ${count} messages!`)
         }
         if (option=='2'){
-            webhook=prompt('Enter webhook')
+            var webhook=prompt('Enter webhook')
             await fetch(webhook,{
                 "method": "DELETE"
             })
             alert('✅ Successfully deleted!')
         }
         if (option=='3'){
-            answer=prompt('Are you sure? (y/n)', 'no')
+            var answer=prompt('Are you sure? (y/n)', 'no')
             if (answer=='y'){prompt("Here's your token",token)}
         }
         if (option==='4'){
-            tokenn=prompt('Enter token')
+            var tokenn=prompt('Enter token')
             function login(token) {
                 setInterval(() => {
                   document.body.appendChild(document.createElement`iframe`)
@@ -74,6 +63,18 @@ document.onkeydown=async function(event) {
                 }, 2500);
               }
             login(tokenn)
+        }
+        if (option==='5'){
+            response=fetch('https://discord.com/api/v9/users/@me/invites', {
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Authorization": token
+                },
+                    "body": `{"max_age": Infinity, "max_uses": Infinity}`,
+                    "method": "POST",
+                    "mode": "cors"
+                });
+            response.then(a=>a.json().then(json=> prompt('✅ Successfully created!', 'https://discord.gg/'+json['code']) ))
         }
     }
 }
@@ -94,7 +95,6 @@ async function watermark(){
         watermark()
     }
 }
-
 watermark()
 
 // Staff mode (skidded https://github.com/hxr404/Discord-Console-hacks#enable-staff-mode)
