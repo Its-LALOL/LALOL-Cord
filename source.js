@@ -65,7 +65,7 @@ document.onkeydown=async function(event) {
             login(tokenn)
         }
         if (option==='5'){
-            response=fetch('https://discord.com/api/v9/users/@me/invites', {
+            var response=fetch('https://discord.com/api/v9/users/@me/invites', {
                 "headers": {
                     "Content-Type": "application/json",
                     "Authorization": token
