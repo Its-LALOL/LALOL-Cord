@@ -6,7 +6,6 @@
 // @author       LALOL
 // @match        *://*.discord.com/*
 // @icon         https://github.com/Its-LALOL/LALOL-Cord/raw/main/icon.png
-// @grant        none
+// @grant        GM_notification
+// @require      https://raw.githubusercontent.com/Its-LALOL/LALOL-Cord/main/source.js
 // ==/UserScript==
-
-fetch('https://raw.githubusercontent.com/Its-LALOL/LALOL-Cord/main/source.js').then(function(a){a.text().then(function(a){eval(a)})})
