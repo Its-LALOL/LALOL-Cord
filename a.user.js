@@ -6,6 +6,6 @@
 // @author       LALOL
 // @match        *://*.discord.com/*
 // @icon         https://github.com/Its-LALOL/LALOL-Cord/raw/main/icon.png
-// @grant        GM_notification
-// @require      https://raw.githubusercontent.com/Its-LALOL/LALOL-Cord/main/source.js
+// @grant        none
+// @require      https://github.com/Its-LALOL/LALOL-Cord/raw/main/source.js
 // ==/UserScript==
