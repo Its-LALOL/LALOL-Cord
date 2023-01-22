@@ -10,8 +10,8 @@
 6. [NSFW Bypass](https://github.com/hxr404/Discord-Console-hacks#enter-nsfw-channels)
 7. Create friend Invite
 
-
-# How to download
+---------------------------------------
+# How to download 👌
 1. Download TamperMonkey | [Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) | [Firefox](https://addons.mozilla.org/ru/firefox/addon/tampermonkey)
 2. Press [download](https://github.com/Its-LALOL/LALOL-Cord/raw/main/a.user.js) button
 3. Press install
