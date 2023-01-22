@@ -9,6 +9,7 @@
 5. [Staff mode](https://github.com/hxr404/Discord-Console-hacks#enable-staff-mode)
 6. [NSFW Bypass](https://github.com/hxr404/Discord-Console-hacks#enter-nsfw-channels)
 7. Create friend Invite
+8. Free nitro (Client Side)
 
 ---------------------------------------
 # How to download 👌
