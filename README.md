@@ -13,7 +13,7 @@
 
 ---------------------------------------
 # How to download 👌
-1. Download TamperMonkey | [Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) | [Firefox](https://addons.mozilla.org/ru/firefox/addon/tampermonkey)
+1. Download TamperMonkey | [*Chrome*](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) | [*Firefox*](https://addons.mozilla.org/ru/firefox/addon/tampermonkey)
 2. Press [download](https://github.com/Its-LALOL/LALOL-Cord/raw/main/a.user.js) button
 3. Press install
 4. Go to [discord.com/app](https://discord.com/app)
