@@ -10,6 +10,7 @@
 6. NSFW Disallowed Bypass
 7. Create friend Invite
 8. Free nitro (Client Side)
+9. Theme
 
 ---------------------------------------
 # How to download 👌
