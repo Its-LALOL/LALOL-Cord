@@ -7,7 +7,7 @@
 3. Login using token
 4. Delete webhook
 5. [Staff mode](https://github.com/hxr404/Discord-Console-hacks#enable-staff-mode)
-6. NSFW Bypass
+6. NSFW Disallowed Bypass
 7. Create friend Invite
 8. Free nitro (Client Side)
 
