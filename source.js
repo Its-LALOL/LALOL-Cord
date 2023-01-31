@@ -1,5 +1,8 @@
 function sleep(s){return new Promise(resolve=>setTimeout(resolve,s*1000))}
 
+/* usermod */ window.webpackChunkdiscord_app.push([[Math.random()],{},e=>{wpRequire=e}]),mod=Object.values(wpRequire.c).find((e=>void 0!==e?.exports?.Z?.isDeveloper)),usermod=Object.values(wpRequire.c).find((e=>e?.exports?.default?.getUsers))
+user=null
+
 var findModule=(item)=>window.webpackChunkdiscord_app.push([[Math.random()],{},(req)=>{for(const m of Object.keys(req.c).map((x)=>req.c[x].exports).filter((x)=>x)){if(m.default && m.default[item]!==undefined){return m.default;}}}]);
 var token=findModule('getToken').getToken()
 
@@ -12,7 +15,7 @@ document.onkeydown=async function(event) {
     if (event.keyCode==45){ // if zero numpad
         var id=document.URL.split('/')[5] // channel id
         var heart=get_random_heart()
-        var option=prompt(`${heart}<[LALOL Cord]>${heart}\n\n[1] Flooder\n\[2] Delete Webhook\n[3] Get token\n[4] Login using token\n[5] Create friend Invite\n\nChoose option`)
+        var option=prompt(`${heart}<[LALOL Cord]>${heart}\n\n[1] Flooder\n\[2] Delete Webhook\n[3] Get token\n[4] Login using token\n[5] Create friend Invite\n[6] Account data changer [Client Side]\n\nChoose option`)
         if (option=='1'){
             var text=prompt('Enter text')
             var count=Number(prompt('Enter count'))
@@ -72,14 +75,129 @@ document.onkeydown=async function(event) {
                     "Content-Type": "application/json",
                     "Authorization": token
                 },
-                    "body": `{"max_age": Infinity, "max_uses": Infinity}`,
+                    "body": `{"max_age": 0, "max_uses": 0}`,
                     "method": "POST",
                     "mode": "cors"
                 });
             response.then(a=>a.json().then(json=> prompt('✅ Successfully created!', 'https://discord.gg/'+json['code']) ))
         }
+        if (option==='6'){
+            var option=prompt('[1] Change discriminator\n[2] Change Flags (Badge)\n[3] Change username\n\nChoose option')
+            if (option==='1'){
+                discriminator=prompt('Enter discriminator')
+                user.discriminator=discriminator
+            }
+            if (option=='2'){
+                flag=prompt('Enter flags\n\nhttps://flags.lewisakura.moe/')
+                user.flags=flag
+            }
+            if (option=='3'){
+                username=prompt('Enter username')
+                user.username=username
+            }
+        }
     }
 }
+
+function theme(){
+    const css=`
+    @keyframes rainbow {
+        0% {
+            background: #2c3036;
+        }
+        20% {
+            background: #343e40;
+        }
+        40% {
+            background: #2c3136;
+        }
+        60% {
+            background: #1d2324;
+        }
+        80% {
+            background: #434b4d;
+        }
+        100% {
+            background: #5e3830;
+        }
+    }
+    
+    .container-2RRFHK.fixClipping-3GOd_d {
+        animation: rainbow 3s infinite;
+    }
+    
+    .theme-dark.container-ZMc96U.themed-Hp1KC_, .searchBar-3TnChZ, .scroller-hE2gWq.thin-31rlnD.scrollerBase-_bVAAt,
+    .title-31SJ6t.container-ZMc96U.themed-Hp1KC_, .container-2o3qEW, .members-3WRCEx.thin-31rlnD.scrollerBase-_bVAAt.fade-1R6FHN,
+    .layout-1qmrhw, .member-2gU6Ar.member-48YF_l.container-1oeRFJ.clickable-28SzVr, .interactive-26HRN_.interactive-iyXY_x,
+    .scroller-WSmht3.thin-31rlnD.scrollerBase-_bVAAt.fade-1R6FHN, .scroller-3X7KbA.none-2-_0dP.scrollerBase-_bVAAt,
+    .sidebar-1tnWFu.hasNotice-1s68so, .scroller-1ox3I2.thin-31rlnD.scrollerBase-_bVAAt.fade-1R6FHN {
+        background: #2c3036;
+    }
+    .peopleColumn-1wMU14, .scroller-kQBbkU.auto-2K3UW5.scrollerBase-_bVAAt.disableScrollAnchor-6TwzvM.managedReactiveScroller-1lEEh3,
+    .form-3gdLxP, .container-2RRFHK.fixClipping-3GOd_d {
+        background: #343e40;
+    }
+    .channel-1Shao0.container-32HW5s {
+        background: #2c3136;
+    }
+    .inner-2pOSmK {
+        background: #1d2324;
+    }
+    .inner-NQg18Y.sansAttachButton-1ERHue, .actionButton-3-B2x-, .inner-NQg18Y.innerDisabled-2dbG11.inner-NQg18Y.sansAttachButton-1ERHue {
+        background: #434b4d;
+    }
+    
+    .markup-eYLPri.messageContent-2t3eCI, .markup-eYLPri.editor-H2NA06.slateTextArea-27tjG0.fontSize16Padding-XoMpjI, /* Shadow */
+    .embedWrapper-1MtIDg.embedFull-1HGV2S.embed-hKpSrO.markup-eYLPri {
+        text-shadow: 2px 2px 2px black,2px 2px 2px black;
+        font: "Fira Sans", sans-serif;
+    }
+    
+    @keyframes slide-up { /* Slide */
+        0% {
+            opacity: 0;
+            transform: translateX(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    .message-2CShn3.cozyMessage-1DWF9U.groupStart-3Mlgv1.wrapper-30-Nkg.cozy-VmLDNB.zalgo-26OfGz, .markup-eYLPri.messageContent-2t3eCI, .chatContent-3KubbW,
+    .userPopoutInner-1hXSeY.userProfileInner-3F03PX.userProfileInnerThemedNonPremium-1gT-zY, 
+    .userPopoutInner-1hXSeY.userProfileInner-3F03PX.userProfileInnerThemedWithBanner-2624Yx,
+    .container-1NXEtd, .peopleListItem-u6dGxF, .channel-1Shao0.container-32HW5s {
+      animation: slide-up 0.4s ease;
+    }
+    `
+
+    const style=document.createElement('style')
+    style.id=Math.random()
+    style.innerText=css
+    document.head.appendChild(style)
+}
+
+async function cfg_user_load(){
+    while (true){
+        var config=window.config
+        if (!config){
+            await sleep(0.3)
+        }
+        else{break}
+    }
+    if (config['theme']){ theme() }
+
+    await sleep(1)
+
+    user=usermod.exports.default.getCurrentUser()
+    // Staff mode (skidded https://github.com/hxr404/Discord-Console-hacks#enable-staff-mode)
+    if (config['staff']){ nodes=Object.values(mod.exports.Z._dispatcher._actionHandlers._dependencyGraph.nodes);try{nodes.find((e=>"ExperimentStore"==e.name)).actionHandler.OVERLAY_INITIALIZE({user:{flags:1}})}catch(e){}oldGetUser=usermod.exports.default.__proto__.getCurrentUser,usermod.exports.default.__proto__.getCurrentUser=()=>({isStaff:()=>!0}),nodes.find((e=>"DeveloperExperimentStore"==e.name)).actionHandler.CONNECTION_OPEN(),usermod.exports.default.__proto__.getCurrentUser=oldGetUser; }
+    if (config['NSFW_DisallowedBypass']) {user.nsfwAllowed=true}
+    if (config['FreeNitro']) {user.premiumType=2}
+
+}
+cfg_user_load()
+
 
 async function watermark(){
     try{
@@ -98,15 +216,3 @@ async function watermark(){
     }
 }
 watermark()
-
-// Staff mode (skidded https://github.com/hxr404/Discord-Console-hacks#enable-staff-mode)
-let wpRequire;window.webpackChunkdiscord_app.push([[Math.random()],{},e=>{wpRequire=e}]),mod=Object.values(wpRequire.c).find((e=>void 0!==e?.exports?.Z?.isDeveloper)),usermod=Object.values(wpRequire.c).find((e=>e?.exports?.default?.getUsers)),nodes=Object.values(mod.exports.Z._dispatcher._actionHandlers._dependencyGraph.nodes);try{nodes.find((e=>"ExperimentStore"==e.name)).actionHandler.OVERLAY_INITIALIZE({user:{flags:1}})}catch(e){}oldGetUser=usermod.exports.default.__proto__.getCurrentUser,usermod.exports.default.__proto__.getCurrentUser=()=>({isStaff:()=>!0}),nodes.find((e=>"DeveloperExperimentStore"==e.name)).actionHandler.CONNECTION_OPEN(),usermod.exports.default.__proto__.getCurrentUser=oldGetUser;
-
-await sleep(5) // error fix
-
-var user=window.webpackChunkdiscord_app.push([[Math.random()],{},(req)=>{for(const m of Object.keys(req.c).map((x)=>req.c[x].exports).filter((x)=>x)){if(m.default && m.default.getCurrentUser!==undefined){return user=m.default.getCurrentUser()}}}])
-// Free nitro!!!
-user.premiumType=2
-
-// NSFW Bypass
-user.nsfwAllowed=true
