@@ -11,7 +11,13 @@ function get_random_heart(){
     return hearts[Math.floor(Math.random()*(6-0)+0)]
 }
 
+function set_user(what_change, value){
+    var getuser=usermod.exports.default.getCurrentUser()
+    usermod.exports.default.getCurrentUser=function(){ return getuser.set(what_change, value) }
+}
+
 document.onkeydown=async function(event) {
+    try{ user=usermod.exports.default.getCurrentUser() } catch(err){}
     if (event.keyCode==45){ // if zero numpad
         var id=document.URL.split('/')[5] // channel id
         var heart=get_random_heart()
@@ -85,15 +91,15 @@ document.onkeydown=async function(event) {
             var option=prompt('[1] Change discriminator\n[2] Change Flags (Badge)\n[3] Change username\n\nChoose option')
             if (option==='1'){
                 discriminator=prompt('Enter discriminator')
-                user.discriminator=discriminator
+                set_user('discriminator', discriminator)
             }
             if (option=='2'){
-                flag=prompt('Enter flags\n\nhttps://flags.lewisakura.moe/')
-                user.flags=flag
+                flags=prompt('Enter flags\n\nhttps://flags.lewisakura.moe/')
+                set_user('flags', flags)
             }
             if (option=='3'){
                 username=prompt('Enter username')
-                user.username=username
+                set_user('username', username)
             }
         }
     }
@@ -143,13 +149,13 @@ function theme(){
     .inner-2pOSmK {
         background: #1d2324;
     }
-    .inner-NQg18Y.sansAttachButton-1ERHue, .actionButton-3-B2x-, .inner-NQg18Y.innerDisabled-2dbG11.inner-NQg18Y.sansAttachButton-1ERHue {
+    .inner-NQg18Y.sansAttachButton-1ERHue, .actionButton-3-B2x-, .inner-NQg18Y.innerDisabled-2dbG11.inner-NQg18Y.sansAttachButton-1ERHue, .botTagCozy-3NTBvK.botTag-1NoD0B.botTagRegular-kpctgU.botTag-7aX5WZ.rem-3kT9wc {
         background: #434b4d;
     }
     
     .markup-eYLPri.messageContent-2t3eCI, .markup-eYLPri.editor-H2NA06.slateTextArea-27tjG0.fontSize16Padding-XoMpjI, /* Shadow */
     .embedWrapper-1MtIDg.embedFull-1HGV2S.embed-hKpSrO.markup-eYLPri {
-        text-shadow: 2px 2px 2px black,2px 2px 2px black;
+        text-shadow: 1.5px 1.5px 1.5px black,1.5px 1.5px 1.5px black;
         font: "Fira Sans", sans-serif;
     }
     
@@ -187,13 +193,13 @@ async function cfg_user_load(){
     }
     if (config['theme']){ theme() }
 
-    await sleep(1)
+    await sleep(5)
 
     user=usermod.exports.default.getCurrentUser()
     // Staff mode (skidded https://github.com/hxr404/Discord-Console-hacks#enable-staff-mode)
     if (config['staff']){ nodes=Object.values(mod.exports.Z._dispatcher._actionHandlers._dependencyGraph.nodes);try{nodes.find((e=>"ExperimentStore"==e.name)).actionHandler.OVERLAY_INITIALIZE({user:{flags:1}})}catch(e){}oldGetUser=usermod.exports.default.__proto__.getCurrentUser,usermod.exports.default.__proto__.getCurrentUser=()=>({isStaff:()=>!0}),nodes.find((e=>"DeveloperExperimentStore"==e.name)).actionHandler.CONNECTION_OPEN(),usermod.exports.default.__proto__.getCurrentUser=oldGetUser; }
-    if (config['NSFW_DisallowedBypass']) {user.nsfwAllowed=true}
-    if (config['FreeNitro']) {user.premiumType=2}
+    if (config['NSFW_DisallowedBypass']){ set_user('nsfwAllowed', true) }
+    if (config['FreeNitro']){ set_user('premiumType', 2) }
 
 }
 cfg_user_load()
