@@ -14,7 +14,7 @@
 // ==/UserScript==
 
 window.config = {
-    theme: true,
+    theme: false,
     staff: true,
     NSFW_DisallowedBypass: true,
 
