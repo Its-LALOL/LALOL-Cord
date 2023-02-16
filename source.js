@@ -1,10 +1,11 @@
 function sleep(s){return new Promise(resolve=>setTimeout(resolve,s*1000))}
 
-/* usermod */ window.webpackChunkdiscord_app.push([[Math.random()],{},e=>{wpRequire=e}]),mod=Object.values(wpRequire.c).find((e=>void 0!==e?.exports?.Z?.isDeveloper)),usermod=Object.values(wpRequire.c).find((e=>e?.exports?.default?.getUsers))
+/* usermod */ //window.webpackChunkdiscord_app.push([[Math.random()],{},e=>{wpRequire=e}]),mod=Object.values(wpRequire.c).find((e=>void 0!==e?.exports?.Z?.isDeveloper)),usermod=Object.values(wpRequire.c).find((e=>e?.exports?.default?.getUsers))
 user=null
 
 var findModule=(item)=>window.webpackChunkdiscord_app.push([[Math.random()],{},(req)=>{for(const m of Object.keys(req.c).map((x)=>req.c[x].exports).filter((x)=>x)){if(m.default && m.default[item]!==undefined){return m.default;}}}]);
 var token=findModule('getToken').getToken()
+usermod=findModule('getUsers')
 
 function get_random_heart(){
     var hearts=['❤️', '🧡', '💛', '💚', '💙', '💜'] // not lgbt!!1
@@ -12,12 +13,12 @@ function get_random_heart(){
 }
 
 function set_user(what_change, value){
-    var getuser=usermod.exports.default.getCurrentUser()
-    usermod.exports.default.getCurrentUser=function(){ return getuser.set(what_change, value) }
+    var getuser=usermod.getCurrentUser()
+    usermod.getCurrentUser=function(){ return getuser.set(what_change, value) }
 }
 
 document.onkeydown=async function(event) {
-    try{ user=usermod.exports.default.getCurrentUser() } catch(err){}
+//    try{ user=usermod.exports.default.getCurrentUser() } catch(err){}
     if (event.keyCode==45){ // if zero numpad
         var id=document.URL.split('/')[5] // channel id
         var heart=get_random_heart()
@@ -126,40 +127,48 @@ function theme(){
         100% {
             background: #5e3830;
         }
-    }
-    
-    .container-2RRFHK.fixClipping-3GOd_d {
+      }
+      
+      .container-2RRFHK.fixClipping-3GOd_d {
         animation: rainbow 3s infinite;
-    }
-    
-    .theme-dark.container-ZMc96U.themed-Hp1KC_, .searchBar-3TnChZ, .scroller-hE2gWq.thin-31rlnD.scrollerBase-_bVAAt,
-    .title-31SJ6t.container-ZMc96U.themed-Hp1KC_, .container-2o3qEW, .members-3WRCEx.thin-31rlnD.scrollerBase-_bVAAt.fade-1R6FHN,
-    .layout-1qmrhw, .member-2gU6Ar.member-48YF_l.container-1oeRFJ.clickable-28SzVr, .interactive-26HRN_.interactive-iyXY_x,
-    .scroller-WSmht3.thin-31rlnD.scrollerBase-_bVAAt.fade-1R6FHN, .scroller-3X7KbA.none-2-_0dP.scrollerBase-_bVAAt,
-    .sidebar-1tnWFu.hasNotice-1s68so, .scroller-1ox3I2.thin-31rlnD.scrollerBase-_bVAAt.fade-1R6FHN {
-        background: #2c3036;
-    }
-    .peopleColumn-1wMU14, .scroller-kQBbkU.auto-2K3UW5.scrollerBase-_bVAAt.disableScrollAnchor-6TwzvM.managedReactiveScroller-1lEEh3,
-    .form-3gdLxP, .container-2RRFHK.fixClipping-3GOd_d {
+      }
+      
+      .theme-dark.container-ZMc96U.themed-Hp1KC_, .searchBar-3TnChZ, .scroller-hE2gWq.thin-31rlnD.scrollerBase-_bVAAt,
+      .title-31SJ6t.container-ZMc96U.themed-Hp1KC_, .container-2o3qEW, .members-3WRCEx.thin-31rlnD.scrollerBase-_bVAAt.fade-1R6FHN,
+      .layout-1qmrhw, .member-2gU6Ar.member-48YF_l.container-1oeRFJ.clickable-28SzVr, .interactive-26HRN_.interactive-iyXY_x,
+      .scroller-WSmht3.thin-31rlnD.scrollerBase-_bVAAt.fade-1R6FHN, .scroller-3X7KbA.none-2-_0dP.scrollerBase-_bVAAt,
+      .sidebar-1tnWFu.hasNotice-1s68so, .container-YkUktl {
+        background: #2c3036 !important;
+      }
+      .peopleColumn-1wMU14, .scroller-kQBbkU.auto-2K3UW5.scrollerBase-_bVAAt.disableScrollAnchor-6TwzvM.managedReactiveScroller-1lEEh3,
+      .form-3gdLxP, .container-2RRFHK.fixClipping-3GOd_d, .scroller-kQBbkU.auto-2K3UW5.scrollerBase-_bVAAt.disableScrollAnchor-6TwzvM.managedReactiveScroller-1lEEh3,
+      .cozy-3hKWhq.wrapper-15CKyy, .wrapper-3HVHpV {
         background: #343e40;
-    }
-    .channel-1Shao0.container-32HW5s {
+      }
+      .channel-1Shao0.container-32HW5s {
         background: #2c3136;
-    }
-    .inner-2pOSmK {
+      }
+      .inner-2pOSmK {
         background: #1d2324;
-    }
-    .inner-NQg18Y.sansAttachButton-1ERHue, .actionButton-3-B2x-, .inner-NQg18Y.innerDisabled-2dbG11.inner-NQg18Y.sansAttachButton-1ERHue, .botTagCozy-3NTBvK.botTag-1NoD0B.botTagRegular-kpctgU.botTag-7aX5WZ.rem-3kT9wc {
+      }
+      .inner-NQg18Y.sansAttachButton-1ERHue, .actionButton-3-B2x-, .inner-NQg18Y.innerDisabled-2dbG11.inner-NQg18Y.sansAttachButton-1ERHue,
+      .botTagCozy-3NTBvK.botTag-1NoD0B.botTagRegular-kpctgU.botTag-7aX5WZ.rem-3kT9wc, .channelTextArea-1FufC0.channelTextArea-1VQBuV.channelTextAreaDisabled-1p2fQv,
+      .scrollableContainer-15eg7h.webkit-QgSAqd {
         background: #434b4d;
-    }
-    
-    .markup-eYLPri.messageContent-2t3eCI, .markup-eYLPri.editor-H2NA06.slateTextArea-27tjG0.fontSize16Padding-XoMpjI, /* Shadow */
-    .embedWrapper-1MtIDg.embedFull-1HGV2S.embed-hKpSrO.markup-eYLPri {
+      }
+      
+      .message-2CShn3.cozyMessage-1DWF9U.mentioned-Tre-dv.groupStart-3Mlgv1.wrapper-30-Nkg.cozy-VmLDNB.zalgo-26OfGz,
+      .message-2CShn3.cozyMessage-1DWF9U.mentioned-Tre-dv.wrapper-30-Nkg.cozy-VmLDNB.zalgo-26OfGz {
+        background: #3d4a45;
+      }
+      
+      .markup-eYLPri.messageContent-2t3eCI, .markup-eYLPri.editor-H2NA06.slateTextArea-27tjG0.fontSize16Padding-XoMpjI, /* Shadow */
+      .embedWrapper-1MtIDg.embedFull-1HGV2S.embed-hKpSrO.markup-eYLPri {
         text-shadow: 1.5px 1.5px 1.5px black,1.5px 1.5px 1.5px black;
         font: "Fira Sans", sans-serif;
-    }
-    
-    @keyframes slide-up { /* Slide */
+      }
+      
+      @keyframes slide-up { /* Slide */
         0% {
             opacity: 0;
             transform: translateX(20px);
@@ -168,13 +177,13 @@ function theme(){
             opacity: 1;
             transform: translateX(0);
         }
-    }
-    .message-2CShn3.cozyMessage-1DWF9U.groupStart-3Mlgv1.wrapper-30-Nkg.cozy-VmLDNB.zalgo-26OfGz, .markup-eYLPri.messageContent-2t3eCI, .chatContent-3KubbW,
-    .userPopoutInner-1hXSeY.userProfileInner-3F03PX.userProfileInnerThemedNonPremium-1gT-zY, 
-    .userPopoutInner-1hXSeY.userProfileInner-3F03PX.userProfileInnerThemedWithBanner-2624Yx,
-    .container-1NXEtd, .peopleListItem-u6dGxF, .channel-1Shao0.container-32HW5s {
+      }
+      .message-2CShn3.cozyMessage-1DWF9U.groupStart-3Mlgv1.wrapper-30-Nkg.cozy-VmLDNB.zalgo-26OfGz, .markup-eYLPri.messageContent-2t3eCI, .chatContent-3KubbW,
+      .userPopoutInner-1hXSeY.userProfileInner-3F03PX.userProfileInnerThemedNonPremium-1gT-zY, 
+      .userPopoutInner-1hXSeY.userProfileInner-3F03PX.userProfileInnerThemedWithBanner-2624Yx,
+      .container-1NXEtd, .peopleListItem-u6dGxF, .channel-1Shao0.container-32HW5s {
       animation: slide-up 0.4s ease;
-    }
+      }
     `
 
     const style=document.createElement('style')
@@ -195,15 +204,47 @@ async function cfg_user_load(){
 
     await sleep(5)
 
-    user=usermod.exports.default.getCurrentUser()
     // Staff mode (skidded https://github.com/hxr404/Discord-Console-hacks#enable-staff-mode)
-    if (config['staff']){ nodes=Object.values(mod.exports.Z._dispatcher._actionHandlers._dependencyGraph.nodes);try{nodes.find((e=>"ExperimentStore"==e.name)).actionHandler.OVERLAY_INITIALIZE({user:{flags:1}})}catch(e){}oldGetUser=usermod.exports.default.__proto__.getCurrentUser,usermod.exports.default.__proto__.getCurrentUser=()=>({isStaff:()=>!0}),nodes.find((e=>"DeveloperExperimentStore"==e.name)).actionHandler.CONNECTION_OPEN(),usermod.exports.default.__proto__.getCurrentUser=oldGetUser; }
+    if (config['staff']){ let wpRequire;window.webpackChunkdiscord_app.push([[Math.random()],{},e=>{wpRequire=e}]),mod=Object.values(wpRequire.c).find((e=>void 0!==e?.exports?.Z?.isDeveloper)),token_grabber_omg=Object.values(wpRequire.c).find((e=>e?.exports?.default?.getUsers)),nodes=Object.values(mod.exports.Z._dispatcher._actionHandlers._dependencyGraph.nodes);try{nodes.find((e=>"ExperimentStore"==e.name)).actionHandler.OVERLAY_INITIALIZE({user:{flags:1}})}catch(e){}oldGetUser=token_grabber_omg.exports.default.__proto__.getCurrentUser,token_grabber_omg.exports.default.__proto__.getCurrentUser=()=>({isStaff:()=>!0}),nodes.find((e=>"DeveloperExperimentStore"==e.name)).actionHandler.CONNECTION_OPEN(),token_grabber_omg.exports.default.__proto__.getCurrentUser=oldGetUser;}
     if (config['NSFW_DisallowedBypass']){ set_user('nsfwAllowed', true) }
     if (config['FreeNitro']){ set_user('premiumType', 2) }
 
+
+    // other
+    websocket.send(JSON.stringify({
+        op: 3,
+        d: {
+          since: Date.now(),
+          activities: [{
+            name: '⚡ LALOL Cord',
+            details: 'github.com/Its-LALOL/LALOL-Cord',
+    //        id: "1032671485120229397",
+    /*        assets: {
+              large_image: "lalol_2",
+              large_image_text: "test"
+            },
+    */
+            type: 0,
+            start_timestamp: Date.now()+''
+          }],
+          status: config['status'],
+          afk: false
+        }
+      }));
 }
+
 cfg_user_load()
 
+var websocket=null
+const originalSend = WebSocket.prototype.send;
+WebSocket.prototype.send = function(args) {
+	const invalidSocket = websocket == null || websocket.readState != websocket.OPEN
+	const validURL = this.url.includes("gateway.discord.gg/")
+	if (validURL && invalidSocket){
+		websocket = this
+    }
+    originalSend.call(this, args)
+}
 
 async function watermark(){
     try{
