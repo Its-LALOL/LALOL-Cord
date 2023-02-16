@@ -2,7 +2,7 @@
 // @name         ⚡ LALOL Cord
 // @namespace    https://github.com/Its-LALOL/LALOL-Cord
 // @description  Modification for discord
-// @version      0.1
+// @version      0.2
 // @author       LALOL
 // @match        *://*.discord.com/*
 // @icon         https://github.com/Its-LALOL/LALOL-Cord/raw/main/icon.png
@@ -19,4 +19,6 @@ window.config = {
     NSFW_DisallowedBypass: true,
 
     FreeNitro: false,
+
+    status: 'online'
 }
