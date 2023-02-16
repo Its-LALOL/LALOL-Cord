@@ -14,6 +14,7 @@
 // ==/UserScript==
 
 window.config = {
+
     theme: false,
     staff: true,
     NSFW_DisallowedBypass: true,
@@ -21,4 +22,5 @@ window.config = {
     FreeNitro: false,
 
     status: 'online'
+
 }
